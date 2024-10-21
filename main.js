@@ -15,6 +15,8 @@ document.getElementById("d8").addEventListener("click", roll_d8)
 document.getElementById("d6").addEventListener("mouseenter", d6_enter)
 document.getElementById("d6").addEventListener("mouseleave", d6_leave)
 
+document.getElementById("d8").addEventListener("mouseenter", d8_enter)
+document.getElementById("d8").addEventListener("mouseleave", d8_leave)
 
 document.getElementById("enter").addEventListener("click", greeting);
 
@@ -43,11 +45,18 @@ function d6_leave(){
 
 }
 
+function d8_enter(){
+    document.getElementById("die").textContent = "👹"
+}
+
+function d8_leave(){
+    document.getElementById("die").textContent = "🎲"
+}
 
 function greeting(){
     let name = document.getElementById("user_input").value;
     document.getElementById("greeting").textContent = ("Hello" + " " + name)
-
+    document.getElementById("user_input").value = "";
 }
 
 
